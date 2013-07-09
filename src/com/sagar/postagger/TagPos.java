@@ -48,13 +48,11 @@ public class TagPos {
 
 		for(String[] s:reviews){
 			String[] row = new String[tagset.size() + 1];
-			String review = s[0].
-								replace('_', ' ').
+			String review = s[0].replace('_', ' ').
 								replace('$', ' ').
 								replace(';',' ');
 
 			String taggedString = tagger.tagString(review);
-			//row[0]=taggedString;
 			for(int i = 0; i < row.length-1; i++){
 				row[i] = "" + (taggedString.length() - taggedString.replaceAll("_"+tagset.get(i)[0].trim(), "").length());
 			}
